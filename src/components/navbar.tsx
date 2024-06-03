@@ -6,9 +6,7 @@ import { ModeToggle } from "./mode-toggle";
 import { NICK_NAME, WEB_SITE_NAME, SOURCE_CODE_GITHUB_URL } from "@/constants/info";
 import { PATHS } from "@/constants/path";
 import { Button } from "./ui/button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { LogIn } from "lucide-react";
+import { Github, LogIn } from "lucide-react";
 import { navbarItems } from "./config/navbar-config";
 
 export default function Navbar() {
@@ -45,7 +43,7 @@ export default function Navbar() {
                         <ModeToggle />
                         <Link href={SOURCE_CODE_GITHUB_URL} target="_blank" aria-label={SOURCE_CODE_GITHUB_URL}>
                             <Button variant="outline" size="icon" aria-label="Github Icon">
-                                <FontAwesomeIcon icon={faGithub} size="2x" />
+                                <Github />
                             </Button>
                         </Link>
                         <Link href={PATHS.ADMIN_HOME_PATH} target="_blank" aria-label="admin login">
