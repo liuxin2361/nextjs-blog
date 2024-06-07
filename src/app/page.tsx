@@ -1,3 +1,4 @@
+import Media from "@/components/media";
 import { buttonVariants } from "@/components/ui/button";
 import { IndexInfo } from "@/components/ui/home/index-info";
 import { PATHS } from "@/constants/path";
@@ -5,10 +6,10 @@ import Link from "next/link";
 
 export default function Home() {
   let delay: number = 0;
-  const getDelay = () => (delay += 200);
+  const getDelay = () => (delay += 100);
 
   return (
-    <div className="h-[calc(50vh-32px)] grid place-content-center relative">
+    <div className="h-[calc(60vh-16px)] grid place-content-center relative">
       <p className="text-2xl md:text-5xl tracking-widest animate-fade-up animate-ease-in-out" style={{ animationDelay: `${getDelay}ms` }}>
         Welcome to my website!
       </p>
@@ -18,7 +19,7 @@ export default function Home() {
       <p className="text-base md:text-2xl text-muted-foreground tracking-widest" style={{ animationDelay: `${getDelay}ms` }}>
         This website records my growth and efforts to become a better engineer.💪
       </p>
-      <div className="flex space-x-4 animate-fade-up animate-ease-in-out mt-8" style={{ animationDelay: `${getDelay}ms` }}>
+      <div className="flex space-x-4 animate-fade-up animate-ease-in-out mt-4" style={{ animationDelay: `${getDelay}ms` }}>
         <Link href={PATHS.BLOG_PATH} className={buttonVariants({ variant: 'outline' })}>
           Blog
         </Link>
@@ -26,6 +27,9 @@ export default function Home() {
           About
         </Link>
       </div>
+      <ul className="flex space-x-4 animate-fade-up animate-ease-in-out mt-4" style={{ animationDelay: `${getDelay}ms` }}>
+        <Media />
+      </ul>
     </div>
   );
 }
