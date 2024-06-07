@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Navbar />
-          <main className="flex min-h-screen flex-col p-6">
+          <main className="flex flex-col p-6 min-h-screen">
             {children}
           </main>
           <Footer />
