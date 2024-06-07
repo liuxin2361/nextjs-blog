@@ -1,20 +1,31 @@
+import { buttonVariants } from "@/components/ui/button";
 import { IndexInfo } from "@/components/ui/home/index-info";
+import { PATHS } from "@/constants/path";
+import Link from "next/link";
 
 export default function Home() {
+  let delay: number = 0;
+  const getDelay = () => (delay += 200);
+
   return (
     <div className="h-[calc(50vh-32px)] grid place-content-center relative">
-      <p className="text-2xl md:text-5xl tracking-widest animate-fade-up animate-ease-in-out">
+      <p className="text-2xl md:text-5xl tracking-widest animate-fade-up animate-ease-in-out" style={{ animationDelay: `${getDelay}ms` }}>
         Welcome to my website!
       </p>
-      {/* <strong className="text-5xl md:text-8xl tracking-widest font-black bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 animate-fade-up animate-ease-in-out">
-        {NICK_NAME}
-      </strong> */}
-      <div className="animate-fade-up animate-ease-in-out">
+      <div className="animate-fade-up animate-ease-in-out" style={{ animationDelay: `${getDelay}ms` }}>
         <IndexInfo />
       </div>
-      <p className="text-base md:text-2xl text-muted-foreground tracking-widest">
+      <p className="text-base md:text-2xl text-muted-foreground tracking-widest" style={{ animationDelay: `${getDelay}ms` }}>
         This website records my growth and efforts to become a better engineer.💪
       </p>
+      <div className="flex space-x-4 animate-fade-up animate-ease-in-out mt-8" style={{ animationDelay: `${getDelay}ms` }}>
+        <Link href={PATHS.BLOG_PATH} className={buttonVariants({ variant: 'outline' })}>
+          Blog
+        </Link>
+        <Link href={PATHS.ABOUT_PATH} className={buttonVariants({ variant: 'outline' })}>
+          About
+        </Link>
+      </div>
     </div>
   );
 }
