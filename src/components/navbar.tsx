@@ -6,8 +6,9 @@ import { ModeToggle } from "./mode-toggle";
 import { NICK_NAME, WEB_SITE_NAME, SOURCE_CODE_GITHUB_URL } from "@/constants/info";
 import { PATHS } from "@/constants/path";
 import { Button } from "./ui/button";
-import { Github, LogIn } from "lucide-react";
 import { navbarItems } from "./config/navbar-config";
+import { MaterialSymbolsLightLogin, MaterialSymbolsLogin } from "./ui/icons/login-icon";
+import { MingcuteGithubLine } from "./ui/icons/github-icon";
 
 export default function Navbar() {
     return (
@@ -43,12 +44,12 @@ export default function Navbar() {
                         <ModeToggle />
                         <Link href={SOURCE_CODE_GITHUB_URL} target="_blank" aria-label={SOURCE_CODE_GITHUB_URL}>
                             <Button variant="outline" size="icon" aria-label="Github Icon">
-                                <Github />
+                                <MingcuteGithubLine />
                             </Button>
                         </Link>
                         <Link href={PATHS.ADMIN_HOME_PATH} target="_blank" aria-label="admin login">
                             <Button variant="outline" size="icon" aria-label="admin login">
-                                <LogIn />
+                                <MaterialSymbolsLightLogin />
                             </Button>
                         </Link>
                     </div>
