@@ -3,7 +3,7 @@ import type { SVGProps } from 'react';
 
 export function SkillIconsGmailLight(props: SVGProps<SVGSVGElement>) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="auto" height="auto" viewBox="0 0 256 256" {...props}>
+        <svg xmlns="http://www.w3.org/2000/svg" width={38} height={38} viewBox="0 0 256 256" {...props}>
             <g fill="none"><rect width={256} height={256} fill="#f4f2ed" rx={60}>
             </rect>
                 <path fill="#4285f4" d="M41.636 203.039h31.818v-77.273L28 91.676v97.727c0 7.545 6.114 13.636 13.636 13.636">
