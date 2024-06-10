@@ -15,11 +15,13 @@ npm run dev
 1. [Install Docker](https://docs.docker.com/get-docker/) on your machine
 2. Clone the code
 3. Build your container:
-   ```bash
-   docker build -t nextjs-blog .
-   ```
-4.Run your container:
-  ```bash
+
+```bash
+docker build -t nextjs-blog .
+```
+4. Run your container:
+   
+```bash
 docker run -p 3000:3000 nextjs-blog
 ```
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
