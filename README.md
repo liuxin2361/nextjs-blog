@@ -1,10 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This project is a personal initiative for learning and exploration and <mark><big>Not finished yet, still under development<big><mark>.
+
+## Introduction
+
+![Next.js](https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=fff&style=for-the-badge)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
+
+A simple personal blog website developed using Next.js, React 18, TypeScript, Shadcn/ui, and Tailwind CSS.
 
 ## Getting Started
 
-### run on local
+Ensure You Have Installed
 
-Clone the code and then run the development server:
+- Git
+- Node.js >= 18
+
+### clone the code
+
+```bash
+git clone git@github.com:liuxin2361/nextjs-blog.git
+```
+### install the dependencies
+
+```bash
+npm install
+```
+run on local
+
+### run the development server
 
 ```bash
 npm run dev
