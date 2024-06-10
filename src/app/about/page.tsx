@@ -47,14 +47,6 @@ export default function About() {
                         </li>
                     </ul>
                 </div>
-                {/* <div className="animate-fade-up animate-ease-in-out mb-8">
-                    <h3 className="text-1xl font-bold md:text-2xl mb-4">Database</h3>
-                    <ul>
-                        <li className="flex">
-                            <IconoirDatabaseTagSolid className="mx-1 translate-y-0.5" /> Oracle Database/PostgreSQL/MySQL
-                        </li>
-                    </ul>
-                </div> */}
                 <div className="animate-fade-up animate-ease-in-out mb-8">
                     <h3 className="text-1xl font-bold md:text-2xl mb-4">Other</h3>
                     <ul>
