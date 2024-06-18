@@ -9,6 +9,11 @@ import { SkillIconsPythonLight } from "@/components/ui/icons/python-icon";
 import { SkillIconsReactLight } from "@/components/ui/icons/reactjs-icon";
 import { SimpleIconsSpringboot } from "@/components/ui/icons/springboot-icon";
 import { NICK_NAME } from "@/constants/info";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "About",
+};
 
 export default function About() {
     return (

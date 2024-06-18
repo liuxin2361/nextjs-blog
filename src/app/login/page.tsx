@@ -6,8 +6,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { PATHS } from "@/constants/path";
 import { authenticate } from "@/lib/actions";
+import { Metadata } from "next";
 import Link from "next/link";
 import { useFormState, useFormStatus } from 'react-dom';
+
+export const metadata: Metadata = {
+    title: 'Login',
+}
 
 export default function Page() {
     const [errorMessage, dispatch] = useFormState(authenticate, undefined);
