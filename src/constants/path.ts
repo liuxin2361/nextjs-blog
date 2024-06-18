@@ -3,5 +3,6 @@ export const PATHS = {
     BLOG_PATH: '/blog',
     ABOUT_PATH: '/about',
 
-    ADMIN_HOME_PATH: '/login',
+    ADMIN_LOGIN_PATH: '/login',
+    ADMIN_HOME_PATH: '/admin/path: **',
 };
