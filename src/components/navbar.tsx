@@ -12,7 +12,7 @@ import { MingcuteGithubLine } from "./ui/icons/github-icon";
 
 export default function Navbar() {
     return (
-        <header className="relative w-full px-8">
+        <header className="relative w-full px-8 border-b border-gray-700">
             <div className="max-w-screen-xl mx-auto">
                 <div className="flex justify-between items-center py-6 md:justify-start md:space-x-6 w-full">
                     <div className="md:w-0 md:flex-1">

@@ -19,7 +19,7 @@ export default function About() {
     return (
         <main className="flex flex-col p-6 min-h-screen">
             <div className="max-w-screen-xl mx-auto relative w-full">
-                <section className="w-screen-wrapper prose prose-neutral mx-auto max-w-screen-wrapper dark:prose-invert">
+                <section className="w-screen-wrapper prose-neutral mx-auto max-w-screen-wrapper dark:prose-invert">
                     <h2 className="text-3xl font-bold md:text-4xl mb-8">
                         About
                     </h2>
