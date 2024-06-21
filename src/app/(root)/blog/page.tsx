@@ -1,20 +1,13 @@
-import { getPost } from '@/lib/posts';
-import fs from 'fs';
+import { getPosts } from '@/lib/posts';
 import Link from 'next/link';
-import path from 'path';
 
-export default async function BlogPostsPage() {
-    const files = fs.readdirSync(path.join(process.cwd(), 'content'));
-
-    const posts = await Promise.all(
-        files.map(async filename => {
-            const { frontmatter } = await getPost(filename);
-            return {
-                frontmatter,
-                slug: filename.replace('.mdx', '')
-            }
-        })
-    );
+export default async function BlogPostsPage({
+    searchParams
+}: {
+    searchParams: { tags: string, limit: number, page: number }
+}) {
+    const tags = searchParams.tags?.split(',');
+    const posts = await getPosts({ tags });
 
     return (
         <main className="flex flex-col p-6 min-h-screen">
@@ -26,7 +19,7 @@ export default async function BlogPostsPage() {
                     <ul className='grid grid-cols-1 md:grid-cols-2 gap-8'>
                         {posts.map(post => (
                             <li key={post.slug}>
-                                <Link href={`/blog/${post.slug}`} className='hover:font-semibold hover:text-primary-500 transitio text-2xl'>{post.frontmatter.title}</Link>
+                                <Link href={`/blog/${post.slug}`} className='hover:font-semibold hover:text-primary-500 transitio text-1xl'>{post.frontmatter.title}</Link>
                                 <div className='text-gray-400 text-sm mt-2'>{post.frontmatter.date}</div>
                             </li>
                         ))}

@@ -5,7 +5,7 @@ import { z } from 'zod';
 import { getUser } from '@/lib/data';
 
 
-export const { handlers, signIn, signOut, auth } = NextAuth({
+export const { auth, signIn, signOut } = NextAuth({
     ...authConfig,
     providers: [
         Credentials({

@@ -10,9 +10,6 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { useFormState, useFormStatus } from 'react-dom';
 
-export const metadata: Metadata = {
-    title: 'Login',
-}
 
 export default function Page() {
     const [errorMessage, dispatch] = useFormState(authenticate, undefined);
