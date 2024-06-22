@@ -1,10 +1,11 @@
 import { getPost as getPostNotCached } from '@/lib/posts';
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { cache } from 'react';
 
 const getPost = cache(async (slug: string) => await getPostNotCached(slug));
 
-export async function generateMetadata({ params }: { params?: { slug?: string } }) {
+export async function generateMetadata({ params }: { params?: { slug?: string } }): Promise<Metadata> {
     const { frontmatter } = await getPost(params?.slug as string);
     return frontmatter;
 };
