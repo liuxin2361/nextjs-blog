@@ -7,6 +7,7 @@ This project is a personal initiative for learning and exploration and <mark><bi
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
+[![Static Badge](https://img.shields.io/badge/Blog-XinXinXin-green)](https://nextjs-blog-one-zeta-41.vercel.app/)
 
 A simple personal blog website developed using Next.js, React 18, TypeScript, Shadcn/ui, and Tailwind CSS.
 
@@ -16,7 +17,6 @@ Ensure You Have Installed
 
 - Git
 - Node.js >= 18
-- PostgreSQL 16
 
 ### clone the code
 
@@ -29,24 +29,6 @@ git clone git@github.com:liuxin2361/nextjs-blog.git
 ```bash
 npm install
 ```
-
-### Prepare env files and set database connection information
-
-1. Create database
-2. Create a new .env file
-3. Set `DATABASE_URL` in the .env file.
-4. Use `/scripts/init.sql` to create tables and insert data.
-5. Run the following command to introspect your database:
-
-   ```bash
-   npx prisma db push
-   ```
-
-6. Generate Prisma Client
-
-   ```bash
-   npx prisma generate
-   ```
 
 ### run the application
 
@@ -86,4 +68,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font. 
+You can also deploy on ![Static Badge](https://img.shields.io/badge/Vercel-8A2BE2).
+
