@@ -47,11 +47,11 @@ export default function Navbar() {
                                 <MingcuteGithubLine />
                             </Button>
                         </Link>
-                        <Link href={PATHS.ADMIN_LOGIN_PATH} target="_blank" aria-label="admin login">
+                        {/* <Link href={PATHS.ADMIN_LOGIN_PATH} target="_blank" aria-label="admin login">
                             <Button variant="outline" size="icon" aria-label="admin login">
                                 <MaterialSymbolsLightLogin />
                             </Button>
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
             </div>

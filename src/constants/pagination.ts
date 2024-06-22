@@ -12,6 +12,7 @@ export const ORDER = {
     OLDEST: 'oldest'
 };
 
+// the size of displayed pageination items
 export const PAGINATION_ITEM_SIZE = 5;
 
 export const PAGINATION_FRONT_ITEM = Math.floor((PAGINATION_ITEM_SIZE - 1) / 2);
