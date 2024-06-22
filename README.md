@@ -6,8 +6,7 @@ This project is a personal initiative for learning and exploration and <mark><bi
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
-[![Static Badge](https://img.shields.io/badge/Blog-XinXinXin-green)](https://nextjs-blog-one-zeta-41.vercel.app/)
+[![Static Badge](https://img.shields.io/badge/Blog-XinXinXin-green?style=for-the-badge&logo=Blog&logoColor=white)](https://nextjs-blog-one-zeta-41.vercel.app/)
 
 A simple personal blog website developed using Next.js, React 18, TypeScript, Shadcn/ui, and Tailwind CSS.
 
@@ -69,5 +68,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font. 
+
 You can also deploy on ![Static Badge](https://img.shields.io/badge/Vercel-8A2BE2).
 
