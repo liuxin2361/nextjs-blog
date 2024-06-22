@@ -43,13 +43,21 @@ export default function BlogPagination({ pageCount }: { pageCount: number }) {
                         </PaginationItem>
                     );
                 })}
-                <PaginationItem>
-                    <PaginationEllipsis />
-                </PaginationItem>
+                {showPaginationEllipsis(pageCount, PAGINATION_ITEM_SIZE)}
                 <PaginationItem>
                     <PaginationNext href={`${pathname}?${nextPageParams}`} />
                 </PaginationItem>
             </PaginationContent>
         </Pagination>
     );
+}
+
+const showPaginationEllipsis = (pageCount: number, itemSize: number) => {
+    if (pageCount > itemSize) {
+        return (
+            <PaginationItem>
+                <PaginationEllipsis />
+            </PaginationItem>
+        );
+    }
 }
