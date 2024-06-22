@@ -4,7 +4,7 @@ import { cache } from 'react';
 
 const getPost = cache(async (slug: string) => await getPostNotCached(slug));
 
-export async function generateMetadata({ params }: { params?: { slug?: string } }, parent: string) {
+export async function generateMetadata({ params }: { params?: { slug?: string } }) {
     const { frontmatter } = await getPost(params?.slug as string);
     return frontmatter;
 };
