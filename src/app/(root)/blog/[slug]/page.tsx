@@ -1,12 +1,13 @@
+import { BlogProps } from '@/lib/definitions';
 import { getPost as getPostNotCached } from '@/lib/posts';
-import { Metadata } from 'next';
+import { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
 import { cache } from 'react';
 
 const getPost = cache(async (slug: string) => await getPostNotCached(slug));
 
-export async function generateMetadata({ params }: { params?: { slug?: string } }): Promise<Metadata> {
-    const { frontmatter } = await getPost(params?.slug as string);
+export async function generateMetadata({ params }: BlogProps, parent: ResolvingMetadata): Promise<Metadata> {
+    const { frontmatter } = await getPost(params.slug);
     return frontmatter;
 };
 

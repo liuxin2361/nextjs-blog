@@ -6,3 +6,7 @@ export type User = {
 };
 
 export type SortOrder = 'newest' | 'oldest';
+
+export type BlogProps = {
+    params: { slug: string }
+};
