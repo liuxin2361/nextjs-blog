@@ -1,3 +1,4 @@
+import H1 from "@/components/ui/h1";
 import { SkillIconsAwsLight } from "@/components/ui/icons/aws-icon";
 import { IconoirDatabaseTagSolid } from "@/components/ui/icons/db-icon";
 import { SkillIconsDocker } from "@/components/ui/icons/docker-icon";
@@ -20,9 +21,7 @@ export default function About() {
         <main className="flex flex-col p-6 min-h-screen">
             <div className="max-w-screen-xl mx-auto relative w-full">
                 <section className="w-screen-wrapper prose-neutral mx-auto max-w-screen-wrapper dark:prose-invert">
-                    <h2 className="text-3xl font-bold md:text-4xl mb-8">
-                        About
-                    </h2>
+                    <H1>About</H1>
                     <div className="animate-fade-up animate-ease-in-out mb-8">
                         <h2 className="text-2xl font-bold md:text-3xl mb-4">Who I am</h2>
                         <p>

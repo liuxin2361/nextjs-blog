@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { CompileMDXResult, compileMDX } from 'next-mdx-remote/rsc';
+import H1 from '@/components/ui/h1';
 
 export function loadPosts(slug: string): string {
     const decodeSlug: string = decodeURIComponent(slug);
@@ -19,6 +20,10 @@ export async function getPost(slug: string): Promise<CompileMDXResult<Record<str
         // Optionally pass remark/rehype plugins
         options: {
             parseFrontmatter: true
+        },
+        components: {
+            // Add custom components here
+            h1: H1,
         },
     });
 };

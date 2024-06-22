@@ -4,7 +4,7 @@ import { Pagination } from "@/components/ui/pagination";
 export const DEFAULT_PAGE = 1;
 
 // default page size
-export const DEFAULT_PAGE_SIZE = 1;
+export const DEFAULT_PAGE_SIZE = 10;
 
 // default order; 'newest'
 export const ORDER = {
