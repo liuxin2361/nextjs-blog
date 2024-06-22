@@ -12,7 +12,7 @@ import { MingcuteGithubLine } from "./ui/icons/github-icon";
 
 export default function Navbar() {
     return (
-        <header className="relative w-full px-8">
+        <header className="relative w-full px-8 border-b border-gray-700">
             <div className="max-w-screen-xl mx-auto">
                 <div className="flex justify-between items-center py-6 md:justify-start md:space-x-6 w-full">
                     <div className="md:w-0 md:flex-1">
@@ -47,11 +47,11 @@ export default function Navbar() {
                                 <MingcuteGithubLine />
                             </Button>
                         </Link>
-                        <Link href={PATHS.ADMIN_HOME_PATH} target="_blank" aria-label="admin login">
+                        {/* <Link href={PATHS.ADMIN_LOGIN_PATH} target="_blank" aria-label="admin login">
                             <Button variant="outline" size="icon" aria-label="admin login">
                                 <MaterialSymbolsLightLogin />
                             </Button>
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
             </div>

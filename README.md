@@ -16,20 +16,51 @@ Ensure You Have Installed
 
 - Git
 - Node.js >= 18
+- PostgreSQL 16
 
 ### clone the code
 
 ```bash
 git clone git@github.com:liuxin2361/nextjs-blog.git
 ```
+
 ### install the dependencies
 
 ```bash
 npm install
 ```
-run on local
 
-### run the development server
+### Prepare env files and set database connection information
+
+1. Create database
+2. Create a new .env file
+3. Set `DATABASE_URL` in the .env file.
+4. Use `/scripts/init.sql` to create tables and insert data.
+5. Run the following command to introspect your database:
+
+   ```bash
+   npx prisma db push
+   ```
+
+6. Generate Prisma Client
+
+   ```bash
+   npx prisma generate
+   ```
+
+### run the application
+
+```bash
+npm run dev
+```
+
+### run the application with docker
+
+1. [Install Docker](https://docs.docker.com/get-docker/) on your machine
+
+### run on local
+
+run the development server
 
 ```bash
 npm run dev
@@ -44,14 +75,15 @@ npm run dev
 ```bash
 docker build -t nextjs-blog .
 ```
+
 4. Run your container:
-   
+
 ```bash
 docker run -p 3000:3000 nextjs-blog
 ```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-

@@ -12,7 +12,6 @@ export const metadata: Metadata = {
     default: `${WEB_SITE_NAME}`,
   },
   description: `The blog of ${NICK_NAME}`,
-  keywords: NICK_NAME,
 };
 
 export default function RootLayout({

@@ -81,3 +81,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+hr {
+  @apply border-gray-200 dark:border-gray-800;
+}

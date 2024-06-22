@@ -1,6 +1,9 @@
-import Footer from "@/components/footer";
-import Navbar from "@/components/navbar";
 import HomeMain from "@/components/ui/home/home-main";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+};
 
 export default function Home() {
   return (
