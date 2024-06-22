@@ -35,7 +35,12 @@ export async function getPosts({
         page?: number,
         limit?: number,
         tags?: string[]
-    }): Promise<{ frontmatter: Record<string, any>; slug: string; }[]> {
+    }): Promise<{
+        posts: {
+            frontmatter: Record<string, any>; slug: string;
+        }[];
+        pageCount: number;
+    }> {
     const files = fs.readdirSync(path.join(process.cwd(), 'content'));
 
     const posts = await Promise.all(
@@ -78,5 +83,11 @@ export async function getPosts({
         );
     }
 
-    return filteredPosts;
+    const startIndex: number = (page - 1) * limit; // page=1 ,start=0
+    const endIndex: number = page * limit; // page=1 ,end=10
+
+    return {
+        posts: filteredPosts.slice(startIndex, endIndex),
+        pageCount: Math.ceil(filteredPosts.length / limit)
+    };
 }

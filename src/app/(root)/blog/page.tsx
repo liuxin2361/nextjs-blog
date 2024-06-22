@@ -1,16 +1,25 @@
+'use server';
+
+import BlogPagination from '@/components/blog-pagination';
+import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE, ORDER } from '@/constants/pagination';
+import { SortOrder } from '@/lib/definitions';
 import { getPosts } from '@/lib/posts';
 import Link from 'next/link';
 
 export default async function BlogPostsPage({
     searchParams
 }: {
-    searchParams: { tags: string, limit: number, page: number, order: 'newest' | 'oldest' }
+    searchParams: { tags: string, limit: number, page: number, order: SortOrder }
 }) {
     const tags = searchParams.tags?.split(',');
-    const order = searchParams.order ?? 'newest';
-    const posts = await getPosts({
+    const order = searchParams.order ?? ORDER.NEWEST;
+    const page = searchParams.page ?? DEFAULT_PAGE;
+    const limit = searchParams.limit ?? DEFAULT_PAGE_SIZE;
+    const { posts, pageCount } = await getPosts({
         tags,
-        newest: order === 'newest',
+        newest: order === ORDER.NEWEST,
+        page,
+        limit
     });
 
     return (
@@ -22,12 +31,12 @@ export default async function BlogPostsPage({
                     <div className='mb-8'>
                         Display&nbsp;
                         {order === 'newest' &&
-                            <Link className='underline' href="/blog?order=oldest">
-                                oldest
+                            <Link className='underline' href={`/blog?order=${ORDER.OLDEST}`}>
+                                {ORDER.OLDEST}
                             </Link>}
                         {order === 'oldest' &&
-                            <Link className='underline' href="/blog?order=newest">
-                                newest
+                            <Link className='underline' href={`/blog?order=${ORDER.NEWEST}`}>
+                                {ORDER.NEWEST}
                             </Link>}
                     </div>
                     <ul className='grid grid-cols-1 md:grid-cols-2 gap-8'>
@@ -38,6 +47,9 @@ export default async function BlogPostsPage({
                             </li>
                         ))}
                     </ul>
+                    <div className='mt-8'>
+                        <BlogPagination pageCount={pageCount} />
+                    </div>
                 </section>
             </div>
         </main >
