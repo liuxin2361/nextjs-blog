@@ -27,11 +27,11 @@ export async function getPost(slug: string): Promise<CompileMDXResult<Record<str
  * Get multiple blogs
  */
 export async function getPosts({
-    sortByDate = false,
+    newest = true,
     page = 1,
     limit = 10,
     tags = [] }: {
-        sortByDate?: boolean,
+        newest?: boolean,
         page?: number,
         limit?: number,
         tags?: string[]
@@ -55,6 +55,26 @@ export async function getPosts({
             post => post.frontmatter.tags && post.frontmatter.tags.some(
                 (tag: string) => tags.includes(tag)
             )
+        );
+    }
+
+    if (newest) {
+        // sorted by the newest
+        filteredPosts.sort(
+            (a, b) => {
+                const aDate = new Date(a.frontmatter.date).getTime();
+                const bDate = new Date(b.frontmatter.date).getTime();
+                return bDate - aDate;
+            }
+        );
+    } else {
+        // sorted by the oldest
+        filteredPosts.sort(
+            (a, b) => {
+                const aDate = new Date(a.frontmatter.date).getTime();
+                const bDate = new Date(b.frontmatter.date).getTime();
+                return aDate - bDate;
+            }
         );
     }
 
