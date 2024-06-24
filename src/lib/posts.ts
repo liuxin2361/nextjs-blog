@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { CompileMDXResult, compileMDX } from 'next-mdx-remote/rsc';
 import H1 from '@/components/ui/h1';
+import { BlogPost, Post } from './definitions';
 
 export function loadPosts(slug: string): string {
     const decodeSlug: string = decodeURIComponent(slug);
@@ -13,7 +14,7 @@ export function loadPosts(slug: string): string {
 /**
  * get single blog
  */
-export async function getPost(slug: string): Promise<CompileMDXResult<Record<string, any>>> {
+export async function getPost(slug: string): Promise<BlogPost> {
     const source = loadPosts(slug);
     return await compileMDX({
         source,
@@ -41,9 +42,7 @@ export async function getPosts({
         limit?: number,
         tags?: string[]
     }): Promise<{
-        posts: {
-            frontmatter: Record<string, any>; slug: string;
-        }[];
+        posts: Post[];
         pageCount: number;
     }> {
     const files = fs.readdirSync(path.join(process.cwd(), 'content'));
@@ -58,10 +57,11 @@ export async function getPosts({
         })
     );
 
-    let filteredPosts = posts;
+    let filteredPosts: Post[] = posts;
 
     if (tags.length > 0) {
         filteredPosts = filteredPosts.filter(
+            // TODO frontmatter 类型未定义
             post => post.frontmatter.tags && post.frontmatter.tags.some(
                 (tag: string) => tags.includes(tag)
             )

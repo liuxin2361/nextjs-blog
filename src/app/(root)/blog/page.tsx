@@ -10,9 +10,9 @@ import Link from 'next/link';
 export default async function BlogPostsPage({
     searchParams
 }: {
-    searchParams: { tags: string, limit: number, page: number, order: SortOrder }
+    searchParams: { tag: string, limit: number, page: number, order: SortOrder }
 }) {
-    const tags = searchParams.tags?.split(',');
+    const tags: string[] = searchParams.tag?.split(',');
     const order = searchParams.order ?? ORDER.NEWEST;
     const page = searchParams.page ?? DEFAULT_PAGE;
     const limit = searchParams.limit ?? DEFAULT_PAGE_SIZE;
