@@ -1,12 +1,20 @@
 import { PATHS } from '@/constants/path';
 import { BlogProps, BlogPost } from '@/lib/definitions';
-import { getPost as getPostNotCached } from '@/lib/posts';
+import { getPost as getPostNotCached, getPosts } from '@/lib/posts';
 import { Metadata, ResolvingMetadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { cache } from 'react';
 
 const getPost = cache(async (slug: string) => await getPostNotCached(slug));
+
+// combines with dynamic toute segments to statically generate routes
+export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
+    const { posts } = await getPosts({ limit: 1000 });
+    return posts.map(post => ({
+        slug: post.slug,
+    }));
+}
 
 export async function generateMetadata({ params }: BlogProps, parent: ResolvingMetadata): Promise<Metadata> {
     const { frontmatter } = await getPost(params.slug);
