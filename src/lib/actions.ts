@@ -29,6 +29,7 @@ export async function authenticate(prevState: LoginState, formData: FormData): P
         }
         const passwordMatch = await bcrypt.compare(password, user.password);
         if (passwordMatch) {
+
             return {
                 error: false,
                 user: user
