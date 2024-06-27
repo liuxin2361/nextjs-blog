@@ -44,4 +44,3 @@ export async function createUser({ name, email, password }: { name: string, emai
     }
 }
 
-// await createUser({ email: "xinxinxin@example.com", name: "xinxinxin", password: "xinxinxin123" });
