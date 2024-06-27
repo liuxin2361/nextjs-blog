@@ -5,6 +5,13 @@ export type User = {
     password: string;
 };
 
+export type LoginState = {
+    error: boolean,
+    message?: string,
+    user?: User | null
+};
+
+
 export type SortOrder = 'newest' | 'oldest';
 
 export type BlogProps = {

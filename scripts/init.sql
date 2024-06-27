@@ -9,6 +9,6 @@ CREATE TABLE IF NOT EXISTS "public"."user" (
 );
 
 -- insert sample user
-INSERT INTO "public"."user" (name, email, password) VALUES ('admin', 'admin@example.com', 'admin123');
+-- INSERT INTO "public"."user" (name, email, password) VALUES ('admin', 'admin@example.com', 'admin123');
 
 
