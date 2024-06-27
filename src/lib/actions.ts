@@ -1,7 +1,7 @@
 'use server';
 
 import { z } from "zod";
-import { createUser, getUser } from "./data";
+import { getUser } from "./data";
 import { LoginState, User } from "./definitions";
 import { ERROR_MESSAGE_00002, ERROR_MESSAGE_00003, ERROR_MESSAGE_99999 } from "@/constants/message";
 import bcrypt from 'bcrypt';

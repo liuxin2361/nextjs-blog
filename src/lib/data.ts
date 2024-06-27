@@ -43,4 +43,3 @@ export async function createUser({ name, email, password }: { name: string, emai
         throw new Error(ERROR_MESSAGE_00004);
     }
 }
-
