@@ -1,43 +1,21 @@
 'use server';
 
-import { z } from "zod";
-import { getUser } from "./data";
+import { AuthError } from "next-auth";
 import { LoginState, User } from "./definitions";
-import { ERROR_MESSAGE_00002, ERROR_MESSAGE_00003, ERROR_MESSAGE_99999 } from "@/constants/message";
-import bcrypt from 'bcrypt';
+import { signIn } from "@/auth";
 
-export async function authenticate(prevState: LoginState, formData: FormData): Promise<LoginState> {
-    const parsedCredentials = z
-        .object({ email: z.string().email(), password: z.string().min(6) })
-        .safeParse(Object.fromEntries(formData.entries()));
-    if (parsedCredentials.success) {
-        const { email, password } = parsedCredentials.data;
-        let user: User | null = null;
-        try {
-            user = await getUser(email);
-        } catch (error) {
-            return {
-                error: true,
-                message: error instanceof Error ? error.message : ERROR_MESSAGE_99999,
-            };
+export async function authenticate(prevState: string | undefined, formData: FormData) {
+    try {
+        await signIn('credentials', formData);
+    } catch (error) {
+        if (error instanceof AuthError) {
+            switch (error.type) {
+                case 'CredentialsSignin':
+                    return 'Invalid credentials.';
+                default:
+                    return 'Something went wrong.';
+            }
         }
-        if (!user) {
-            return {
-                error: true,
-                message: ERROR_MESSAGE_00002,
-            };
-        }
-        const passwordMatch = await bcrypt.compare(password, user.password);
-        if (passwordMatch) {
-
-            return {
-                error: false,
-                user: user
-            };
-        }
+        throw error;
     }
-    return {
-        error: true,
-        message: ERROR_MESSAGE_00003,
-    };
 };
