@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { CompileMDXResult, compileMDX } from 'next-mdx-remote/rsc';
+import { compileMDX } from 'next-mdx-remote/rsc';
 import H1 from '@/components/ui/h1';
 import { BlogPost, Post } from './definitions';
 
