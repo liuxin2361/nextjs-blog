@@ -1,0 +1,35 @@
+---
+title: "AWS GuardDuty Overview"
+description: Study Notes of AWS Certified Security – Specialty
+date: "2024-07-20"
+tags:
+    - AWS
+    - Security
+---
+## AWS  Guard Duty  Overview
+
+[官方文档](https://docs.aws.amazon.com/zh_cn/guardduty/latest/ug/what-is-guardduty.html)
+
+Amazon Guard Duty 是一项威胁检测服务，可持续监控、分析和处理您AWS 环境中的特定数据源和日志。 GuardDuty使用威胁情报源（例如恶意 IP 地址和域名列表）以及机器学习 (ML) 模型来识别 AWS 环境中意外且可能未经授权的活动。这包括以下问题：
+
+- 权限升级、使用暴露的凭据或与恶意 IP 地址和域进行通信。
+- 您的 Amazon EC2 实例和容器工作负载上存在恶意软件，Amazon S3 存储桶中存在新上传的文件。
+- 在数据库中发现异常的登录事件模式。
+
+例如， GuardDuty可以检测可能遭到入侵的 EC2 实例和容器工作负载，为恶意软件提供服务或挖掘比特币。它还会监控 AWS 账户访问行为以寻找潜在的入侵迹象，例如未经授权的基础设施部署（部署在以前从未使用过的区域中的实例），或者建议更改密码策略以降低密码强度的异常 API 调用。
+
+### 输入数据源
+
+通过对Guard Duty输入下列数据源，对输入数据进行分析，来检测发现威胁，生成调查结果。可以在 Event Bridge 设置规则，当发现任何异常时触发Lambda(自动化处理)或者SNS(发送通知)。
+
+1. VPC Flow Logs
+2. CloudTrail Logs
+3. DNS Logs(AWS DNS)
+
+可选：
+
+4. S3 Logs
+5. EBS Volumes
+6. Lambda Network Activate
+7. RDS & Aurora Login Activate
+8. EKS Audit & Runtime Monitoring
